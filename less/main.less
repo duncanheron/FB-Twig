@@ -1,0 +1,258 @@
+/* 	
+++++++++++++++++++++ 
++++ MAIN STYLING +++ 
+++++++++++++++++++++ 
+*/
+
+
+/*
+---------------- 
+--- CONTENTS ---
+---------------- 
+
+	1.0 RESETS
+	2.0 UNIVERSAL
+		2.1 Block elements
+		2.2 Social media
+		2.3 Dropdown menu
+		2.4 Modernizr
+	3.0 HEADER
+		3.1 Primary nav
+		3.2 Secondary nav
+		3.3 Search
+		3.4 Toolbar
+	4.0 CONTENT
+		4.1 Common
+		4.2 Sub nav
+		4.3 Primary
+	5.0 FOOTER
+			
+----------------
+----------------
+*/	
+	
+/*
+--------------- 
+--- COLOURS ---
+--------------- 
+*/
+
+@cyan: #27AAE1; /* rgb(39,170,225) */
+@green: #8DC443; /* rgb(141,196,67) */
+@magenta: #E64097; /* rgb(230,64,151) */
+@orange: #F15D29; /* rgb(241,93,41) */
+@yellow: #FFD200; /* rgb(255,210,0) */
+
+@black: #1F1F1F; /* rgb(31,31,31) */
+@grey-dark: #6F6F6F; /* rgb(111,111,111) */
+@grey-mid: #CFCFCF; /* rgb(207,207,207) */
+@grey-light: #EFEFEF; /* rgb(239,239,239) */
+@white: #FFFFFF; /* rgb(255,255,255) */
+
+/*
+-------------- 
+--- SHARED ---
+-------------- 
+*/
+
+@sprite_master: url('../images/sprite-master.png');
+
+	
+/*
+=======================================
+	1.0 RESETS
+=======================================
+*/
+
+menu, ol, ul {
+	padding: 0;
+}
+
+/*
+=======================================
+	End 1.0 RESETS
+=======================================
+*/
+
+/*
+=======================================
+	2.0 UNIVERSAL
+=======================================
+*/
+
+::selection {
+	background: @yellow;
+	color: @black;
+}
+::-moz-selection {
+	background: @yellow;
+	color: @black;
+}
+
+html,body {
+	height: 100%;
+}
+
+body, #wrapper {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#wrapper {
+	position: relative;
+	min-height: 100%;
+}
+
+a#accesskey { 
+	overflow: hidden;
+	position: absolute;
+	text-indent: -9999px; 
+}
+
+fieldset, 
+	table, 
+		pre {
+			margin-bottom: 0;
+		}
+		
+ul, 
+	ol, 
+		dl {
+			margin: 0;
+		}
+			
+ul li { list-style: none; }
+
+.clear_fix { 
+	visibility: hidden; 
+	height: 0; 
+	clear: both;
+}
+
+.touch.no-webgl * {
+    -webkit-animation: none !important;
+} /* Android 2-3 animation not properly supported */
+
+/* 
+-----------------
+	2.1 Block elements 
+----------------- 
+*/
+
+ul#button_social li {
+	margin: 0 0.5em 0 0;
+	float: left;
+}
+
+ul#button_social li a {
+	height: 48px;
+	display: block;
+}
+
+/*
+ul#button-social li a#social-email {
+	background: url("../img/social-email.svg") no-repeat left center;
+}
+
+ul#button-social li a#social-twitter {
+	background: url("../img/social-twitter.svg") no-repeat left center;
+}
+
+ul#button-social li a#social-dribbble {
+	background: url("../img/social-dribbble.svg") no-repeat left center;
+}
+*/
+.transition (@properties: all, @duration: 0.2s, @timing: ease-in) {
+	-moz-transition-property: @properties;  
+	-moz-transition-duration: @duration;  
+	-moz-transition-timing-function: @timing;
+	-o-transition-property: @properties;  
+	-o-transition-duration: @duration;  
+	-o-transition-timing-function: @timing;
+	-webkit-transition-property: @properties;  
+	-webkit-transition-duration: @duration;  
+	-webkit-transition-timing-function: @timing;
+	transition-property: @properties;  
+	transition-duration: @duration;  
+	transition-timing-function: @timing;
+}
+
+/* 
+-----------------
+	End 2.1 Block elements 
+----------------- 
+*/
+
+/*
+=======================================
+	End 2.0 UNIVERSAL
+=======================================
+*/
+
+/*
+=======================================
+	3.0 HEADER
+=======================================
+*/
+
+/*
+=======================================
+	End 3.0 HEADER
+=======================================
+*/
+
+/*
+=======================================
+	4.0 CONTENT
+=======================================
+*/
+
+#content {
+	width: 548px;
+	margin: 0 auto;
+	padding: 0 0 24px; /* Bottom equal to footer height */
+	position: relative;
+}
+
+/*
+=======================================
+	End 4.0 CONTENT
+=======================================
+*/
+
+/*
+=======================================
+	5.0 FOOTER
+=======================================
+*/
+
+#footer_base {
+	width: 100%;
+	height: 24px;
+	margin: -24px 0 0; /* negative value of footer height */	
+	position: relative;
+	clear: both;
+    overflow: hidden;
+}
+
+#footer {
+	width: 936px;
+	margin: 0 auto 0;
+	position: relative;
+}
+
+/*Opera Fix for Stickyfooter*/
+body:before {
+	content:"";
+	width: 0;
+	height: 100%;
+	margin-top: -32767px;
+	float: left;
+}
+
+/*
+=======================================
+	End 5.0 FOOTER
+=======================================
+*/

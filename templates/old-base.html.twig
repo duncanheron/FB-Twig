@@ -1,0 +1,145 @@
+{% block head %}
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+	<title>{{pageTemplate.getBrowserTitle}}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="en" />
+	<meta name="keywords" content="This is dummy text. Add Generic keywords here" />
+	<meta name="description" content="This is dummy text. Write something here about Generic" />
+	<link href="/css/main.css" rel="stylesheet" type="text/css" />
+	<link href="/css/developer.css" rel="stylesheet" type="text/css" />
+	<link href="/css/print.css" rel="stylesheet" type="text/css" media="print"  />
+	<!--[if IE 6]><link rel="stylesheet" type="text/css" href="/css/ie6.css" /><![endif]-->
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="/css/ie7.css" /><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+	</head>
+	<body id="{{bodyID}}" class="{{bodyClass}}">
+{% endblock %} {# End head #}
+{% block content %}
+	<!--UdmComment-->
+	{{pageTemplate.getStatusMessage}}
+	<div id="topbar_outer">
+		<div id="topbar">
+		{% block social %}
+		<ul id="social">
+			<li><a href="#"><img src="/images/social/facebook.gif" width="22" height="33" alt="Facebook" /></a></li>
+			<li><a href="#"><img src="/images/social/twitter.gif" width="22" height="33" alt="Twitter" /></a></li>
+			<li><a href="#"><img src="/images/social/indesign.gif" width="22" height="33" alt="Indesign" /></a></li>
+			<li><a href="#"><img src="/images/social/share.gif" width="19" height="33" alt="Share" /></a></li>
+		</ul>
+		{% endblock %}
+				<div id="searchbox">
+					<form action="/search" method="get">
+					<label accesskey="4">
+					<input class="searchbox" type="text" name="q" onclick="if(this.value==this.defaultValue)this.value='';" />
+					</label>
+					<input class="searchbutton" type="image" src="/images/searchbutton.gif" alt="searchbutton" />
+					</form>
+				</div>
+			<ul id="secnav">
+				<li><a href="/" accesskey="1">Home</a> - </li>
+				<li><a href="/contact-us">Contact us</a></li>
+				<li id="jobs_button"><a href="/jobs">Jobs</a></li>
+				<li id="membersa_button"><a href="/members">Members' area</a></li>
+			</ul>
+		</div>	
+	</div>
+	<div id="wrapper">
+		<div id="header">
+			<a href="/" id="logo">Back to the homepaage</a>
+			<h1 id="site_heading">Institute of Ecology and Environmental Management</h1>
+			<div id="mission">
+				<h2>Our Mission</h2>
+				<p>To raise the profile of professional ecological and environmental management and to promote the highest standards of practice for the benefit of nature and society.</p>
+			</div>
+			{% block mainnav %}
+				 {{ pageTemplate.mainNavigation() }}
+			{% endblock %}
+		</div>
+		
+
+				<a href="#leftcol" accesskey="2" class="hide">Skip Content</a>
+				<div id="leftcol">
+					{% block pagenav %}	
+						<ul id="subnav">
+							<li><a href="#">Sub nav one</a></li>
+							<li><a href="#">Sub nav two</a></li>
+							<li class="on"><a href="#">Sub nav three</a>
+								<ul>
+									<li><a href="#">Sub sub nav one on two lines</a></li>
+									<li><a href="#">Sub sub nav two</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Sub nav four</a></li>
+							<li><a href="#">Sub nav five</a></li>
+						</ul>
+					{% endblock %}   				
+				</div>
+				
+				<div id="midcol">
+					<div class="content">
+						
+						{% block breadcrumbs %}
+							<ul id="breadcrumb">
+								<li><a href="#">About us</a> ></li>
+								<li><a href="#">Sub link two</a> ></li>
+								<li><a href="#" class="on_bread">Sub sub link two</a></li>
+							</ul>
+						{% endblock %}
+						<!--/UdmComment-->	
+						{% block content %}
+							<h1>About IEEM</h1>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu</p>
+							<img src="/images/assets/content_img.jpg" width="155" height="139" alt="Content Img" class="imgright" />
+							<h2>Heading two</h2>
+							<p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit.</a> Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu</p>
+							<p>pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</p>
+							<p>montes, nascetur ridiculus mus. Donec quam felis, ultricies nec. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</p>
+							<h3>Heading three</h3>
+							<p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</p>
+							<p>Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.</p>
+						{% endblock %}
+						<!--UdmComment-->
+					</div>
+					
+				</div>
+				
+				<div id="rightcol">
+					<ul id="homep_buttons">
+						<li id="join"><a href="#">Join IEEM</a></li>
+						<li id="proffdir"><a href="#">Professonal Directory</a></li>
+						<li id="geosec"><a href="/geographic-regions">Geographic Sections</a></li>
+						<li id="signup_newsletter"><a href="/newsletter-signup">Sign up to our newsletter</a></li>
+					</ul>
+				</div>
+	</div>
+	{% endblock %}
+	{% block footer %}	
+	<div id="footer_outer">
+		<div id="footer">
+			<ul>
+				<li class="list_heading"><h3>Site links</h3></li>
+				<li><a href="/about-ieem">About IEEM</a> |</li>
+				<li><a href="/members">Membership</a> |</li>
+				<li><a href="training-events">Training &amp; Events</a> |</li>
+				<li><a href="/publications">Publications</a> |</li>
+				<li><a href="/policy">Policy</a> |</li>
+				<li><a href="/students-careers">Students &amp; Careers</a></li>
+			</ul>
+			<ul class="list_right">
+				<li class="list_heading"><h3>Site tools</h3></li>
+				<li><a href="/accessibility" accesskey="0">Accessibility</a> |</li>
+				<li><a href="/sitemap" accesskey="3">Site map</a> |</li>
+				<li><a href="/cgi-bin/parser.pl">Text only</a> |</li>
+				<li><a href="/terms-conditions">Terms &amp; Conditions</a> |</li>
+				<li><a href="/privacy-policy">Privacy Policy</a></li>
+			</ul>
+		</div>
+	</div>	
+	<!--/UdmComment-->					
+	</body>
+</html>
+{% endblock %}

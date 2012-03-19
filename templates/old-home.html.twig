@@ -1,0 +1,162 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<!--UdmComment-->	
+<div id="topbar_outer">
+
+	<div id="topbar">
+
+	<ul id="social">
+
+		<li><a href="#"><img src="images/social/facebook.gif" width="22" height="33" alt="Facebook" /></a></li>
+
+		<li><a href="#"><img src="images/social/twitter.gif" width="22" height="33" alt="Twitter" /></a></li>
+
+		<li><a href="#"><img src="images/social/indesign.gif" width="22" height="33" alt="Indesign" /></a></li>
+
+		<li><a href="#"><img src="images/social/share.gif" width="19" height="33" alt="Share" /></a></li>
+
+	</ul>
+
+			<div id="searchbox">
+
+				<form action="/search" method="get">
+
+				<label accesskey="4">
+
+				<input class="searchbox" type="text" name="q" onclick="if(this.value==this.defaultValue)this.value='';" />
+
+				</label>
+
+				<input class="searchbutton" type="image" src="images/searchbutton.gif" alt="searchbutton" />
+
+				</form>
+
+			</div>
+
+		<ul id="secnav">
+				<li><a href="/" accesskey="1">Home</a> - </li>
+				<li><a href="/contact-us">Contact us</a></li>
+				<li id="jobs_button"><a href="/jobs">Jobs</a></li>
+				<li id="membersa_button"><a href="/members">Members' area</a></li>
+			</ul>
+
+	</div>	
+
+</div>
+
+	<div id="wrapper">
+
+		<div id="header">
+
+			<a href="/" id="logo">Back to the homepaage</a>
+
+			<h1 id="site_heading">Institute of Ecology and Environmental Management</h1>
+
+			<div id="mission">
+
+				<h2>Our Mission</h2>
+
+				<p>To raise the profile of professional ecological and environmental management and to promote the highest standards of practice for the benefit of nature and society.</p>
+
+			</div>
+
+				{% block mainnav %}
+					{{ pageTemplate.mainNavigation() }}
+				{% endblock %}
+
+		</div>
+
+				<a href="#leftcol" accesskey="2" class="hide">Skip Content</a>
+
+				<div id="leftcol">
+
+					<div class="content">
+
+						<h2>News</h2>
+
+						<div id="feat_news">
+							{% if featuredNews %}
+							
+								{% if featuredNews.image %}<img src="/img.php?f={{ featuredNews.image }}&amp;p=resizeThenCrop&amp;o=jpg&amp;a[width]=127&a[height]=127" alt="{{featuredNews.title}}" />{% endif %}
+								{% set newslink %}{{ pageTemplate.getSeoUrlWrapper('news', featuredNews.id , featuredNews.title) }}{% endset %}
+								<h3><a href="{{newslink}}">{{featuredNews.title}}</a></h3>
+	
+								<p>{{featuredNews.intro}}</p>
+	
+								<a href="/news" id="more_news">More news</a>
+							{% endif %}
+
+						</div>
+						{% if latestNews %}
+							<ul id="news_list">
+								{% for news in latestNews %}
+									{% set newslink %}{{ pageTemplate.getSeoUrlWrapper('news', news.id , news.title) }}{% endset %}
+									<li><a href="{{newslink}}">{{news.title}}</a><img src="/images/link_arrow.gif" alt="Link Arrow" /></li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+							<a href="#" id="signup_newsletter">Sign up to our newsletter</a>
+
+					</div>
+
+				</div>
+
+					<div id="rightcol">
+
+						<div class="content">
+
+							<ul id="homep_buttons">
+
+								<li id="join"><a href="#">Join IEEM</a></li>
+
+								<li id="proffdir"><a href="#">Professonal Directory</a></li>
+
+								<li id="geosec"><a href="/geographic-regions">Geographic Sections</a></li>
+
+							</ul>
+
+						</div>					
+
+					</div>
+
+				<div id="training_section">
+
+					<div class="content">
+
+					<h2>Training &amp; Events</h2>
+					{% if featuredEvent %}
+						<div id="feat_events">
+
+							{% if featuredEvent.image %}<img src="/img.php?f={{ featuredEvent.image }}&amp;p=resizeThenCrop&amp;o=jpg&amp;a[width]=128&a[height]=127" alt="{{featuredEvent.title}}" />{% endif %}
+							
+							{% set eventlink %}{{ pageTemplate.getSeoUrlWrapper('events', featuredEvent.id , featuredEvent.title) }}{% endset %}
+							<h3><a href="{{eventlink}}">{{featuredEvent.title}}</a></h3>
+
+							<p id="date"><span>{{featuredEvent.location}}</span> - 21 March 2012</p>
+
+							<p>{{featuredEvent.description}} </p>
+
+							<a href="/events" id="more_events">More events</a>
+
+						</div>
+					{% endif %}
+					
+					{% if latestEvents %}
+							<ul id="events_list">
+								{% for event in latestEvents %}
+									{% set eventlink %}{{ pageTemplate.getSeoUrlWrapper('events', event.id , event.title) }}{% endset %}
+									<li>
+										{% if event.image %}<img src="/img.php?f={{ event.image }}&amp;p=resizeThenCrop&amp;o=jpg&amp;a[width]=35&a[height]=35 alt="{{event.title}}" />{% endif %}<a href="{{eventlink}}">{{event.title}} </a><br /><span>{{event.location}}  - {{event.date|date("d M Y")}}</span>
+									</li>
+								{% endfor %}
+							</ul>
+					{% endif %}
+					</div>					
+
+				</div>
+
+	</div>
+	<!--/UdmComment-->	
+{% endblock %}
+		

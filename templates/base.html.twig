@@ -1,0 +1,124 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt_ie9 lt_ie8 lt_ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt_ie9 lt_ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt_ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+{% block head %}
+
+  	<meta charset="utf-8">
+
+  	<title>Business Librarians Association</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+  	<meta name="viewport" content="width=device-width">
+  	
+  	<link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+  	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+  	<link rel="stylesheet" type="text/css" href="/css/type.css" />
+	<link rel="stylesheet" type="text/css" href="/css/print.css" media="print" />
+	
+	<!-- Important: Modernizr must be the first script in HEAD -->
+	<script type="text/javascript" src="/js/modernizr-2.5.3-custom.min.js"></script>
+	<script type="text/javascript" src="http://use.typekit.com/fll6wxt.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+{% endblock %} {# End head #}
+</head>
+
+<body {% if bodyID %} id="{{bodyID}}" {% endif %} {% if bodyClass %} class="{{bodyClass}}" {% endif %}>
+	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  	
+  	<a id="accesskey" accesskey="2" href="#content">Skip Content</a>
+  
+   	<div id="wrapper">
+   	
+   		<div id="header" role="banner">
+   		{% block header %}
+   			   			
+   			{% block logo %}
+	   			<a href="/" id="logo" accesskey="1">Business Librarians Association</a>
+   			{% endblock %} {# End logo #}
+   					
+   			{% block secnav %}
+   			<ul id="secnav" role="navigation">
+   				<li>
+   					<a href="#"></a>
+   				</li>
+	   		</ul> <!-- End #secnav -->
+   			{% endblock %} {# End secnav #}
+   			
+   			{% block prinav %}
+   			<ul id="prinav" role="navigation">
+   				<li>
+   					<a href="#"></a>
+   				</li>
+	   		</ul> <!-- End #prinav -->
+   			{% endblock %} {# End prinav #}
+   			
+   		{% endblock %} {# End header #}
+   			<div class="clear_fix">&nbsp;</div>
+   		</div> <!-- End #header -->
+   	
+   		<div id="content" role="main">
+		{% block content %}
+		
+			{% block core %}
+			<div id="core">
+			
+				{% block navcol %}
+				<div id="navcol">
+				
+					This is the nav col
+				
+				</div> <!-- End #navcol -->
+				{% endblock %} {# End navcol #}
+				
+				{% block maincol %}
+				<div id="maincol">
+				
+					{% block primary %}
+					<div id="primary">
+					
+						This is the primary content area
+					
+					</div> <!-- End #primary -->
+					{% endblock %} {# End primary #}
+				
+				</div> <!-- End #maincol -->
+				{% endblock %} {# End maincol #}
+				
+				{% block compcol %}
+				<div id="compcol" role="complementary">
+				
+					This is the comp col
+				
+				</div> <!-- End #compcol -->
+				{% endblock %} {# End compcol #}
+			
+			</div> <!-- End #core -->
+			{% endblock %} {# End core #}
+		
+		{% endblock %} {# End content #}
+			<div class="clear_fix">&nbsp;</div>
+		</div> <!-- End #content -->
+				
+	</div> <!-- End #wrapper -->
+	
+	<div id="footer_base">
+		<div id="footer" role="contentinfo">
+		{% block footer %}	
+	
+			This is the footer block
+	
+		{% endblock %} {# End footer #}
+			<div class="clear_fix">&nbsp;</div>
+		</div> <!-- End #footer -->
+	</div> <!-- End #footer_base -->
+	
+</body>
+</html>
